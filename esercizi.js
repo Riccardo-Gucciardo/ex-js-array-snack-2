@@ -126,7 +126,29 @@ const autoriMaggiorenni = autori.every(a => a.age >= 18)
 autori.sort((acc, curr) => 
   autoriMaggiorenni ? acc.age - curr.age : curr.age - acc.age
 );
-console.log(autori);
+// console.log(autori);
 
 // ------------Snack 4------------
+
+// 1. Crea array con età degli autori
+const ages = []
+books.forEach(b => {
+    if (!ages.includes(b.author.age)) {
+        ages.push(b.author.age)
+    }
+})
+
+// console.log(ages);
+
+// ------------------------------------------------------------
+
+// 2. Calcola la somma delle età con reduce
+const sommaEtà = ages.reduce((acc,curr) => acc + curr, 0)
+// console.log(sommaEtà);
+
+// ------------------------------------------------------------
+
+// 3. Calcola e stampa l'età media
+const etàMedia = ages.reduce((acc, age) => acc + age, 0) / ages.length;
+console.log(`L'età media degli autori è: ${etàMedia}`);
 
