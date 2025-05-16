@@ -74,7 +74,7 @@ const libriLunghiTitoli = libriLunghi.map(book => book.title)
 
 // 4. Stampa ogni titolo in console
 
-books.forEach(title => console.log(title))
+// books.forEach(title => console.log(title))
 
 // ------------Snack 2------------
 
@@ -95,7 +95,7 @@ const libriScontati = libriDisponibili.map(book => {
         price: `${prezzoScontato}€`
     };
 });
-console.log(libriScontati);
+// console.log(libriScontati);
 
 
 
@@ -109,3 +109,24 @@ const libriPrezzoPieno = libriScontati.find(book => {
 // console.log(libriPrezzoPieno);
 
 // ------------Snack 3------------
+
+// 1. Creare un array con gli autori dei libri
+const autori = books.map(b => b.author)
+
+
+// ------------------------------------------------------------
+
+// 2. Verificare se tutti gli autori sono maggiorenni (età >= 18)
+const autoriMaggiorenni = autori.every(a => a.age >= 18)
+// console.log(autoriMaggiorenni);
+
+// ------------------------------------------------------------
+
+// 3. Ordinare l'array authors in base all'età
+autori.sort((acc, curr) => 
+  autoriMaggiorenni ? acc.age - curr.age : curr.age - acc.age
+);
+console.log(autori);
+
+// ------------Snack 4------------
+
