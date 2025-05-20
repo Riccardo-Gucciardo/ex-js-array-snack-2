@@ -131,12 +131,8 @@ autori.sort((acc, curr) =>
 // ------------Snack 4------------
 
 // 1. Crea array con età degli autori
-const ages = []
-books.forEach(b => {
-    if (!ages.includes(b.author.age)) {
-        ages.push(b.author.age)
-    }
-})
+const ages = books.map(b => b.author.age)
+console.log(ages);
 
 // console.log(ages);
 
